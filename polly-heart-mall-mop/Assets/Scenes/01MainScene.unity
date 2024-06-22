@@ -790,9 +790,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5659000014853701346, guid: fd4e5f8c50f685d4db10a4cde93dbb2c, type: 3}
+      propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7453375649360214745, guid: fd4e5f8c50f685d4db10a4cde93dbb2c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874236404310912066, guid: fd4e5f8c50f685d4db10a4cde93dbb2c, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874236404310912066, guid: fd4e5f8c50f685d4db10a4cde93dbb2c, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2555712702189422245, guid: fd4e5f8c50f685d4db10a4cde93dbb2c, type: 3}
