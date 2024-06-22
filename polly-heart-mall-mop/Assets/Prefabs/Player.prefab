@@ -108,7 +108,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 8
-  jumpForce: 8
+  jumpForce: 6
 --- !u!50 &7874236404310912066
 Rigidbody2D:
   serializedVersion: 4
@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.1
   m_Material: {fileID: 6200000, guid: 4d8af95a624237f40a6c846ed53846c0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
