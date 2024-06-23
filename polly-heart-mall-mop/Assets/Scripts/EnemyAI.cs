@@ -14,7 +14,7 @@ public class EnemyAI : MonoBehaviour
         Suspicious,
         Aggro
     }
-
+    
 
     private enemyState state;
     void Start()
@@ -26,22 +26,23 @@ public class EnemyAI : MonoBehaviour
     {
         state = enemyState.Patrol;
 
+
         switch (state)
         {
             case enemyState.Patrol:
+
                 break;
             case enemyState.Suspicious:
+
                 break;
             case enemyState.Aggro:
 
                 break;
 
+
+                state = enemyState.Aggro;
         }
-        if (aggroMeter >= aggroMaximum)
-        {
-            state = enemyState.Aggro;
-        }
-        
+     
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -52,5 +53,14 @@ public class EnemyAI : MonoBehaviour
 
         }
     }
+
+    private void SpotPlayer()
+    {
+
+    }
+
+    /* ignore I realized this was all unecessary
+    
+        }*/
 
 }
