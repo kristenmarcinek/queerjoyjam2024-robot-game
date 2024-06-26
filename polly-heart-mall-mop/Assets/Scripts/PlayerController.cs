@@ -84,4 +84,16 @@ public class PlayerController : MonoBehaviour
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }
     }
+    private void OnParticleTrigger()
+    {
+       
+    if (gameObject.CompareTag("Player"))
+        {
+            Debug.Log("collect");
+            
+        }
+     
+
+
+    }
 }

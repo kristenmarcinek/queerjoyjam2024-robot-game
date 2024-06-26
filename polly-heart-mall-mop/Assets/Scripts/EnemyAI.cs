@@ -5,10 +5,8 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public GameObject player;
-    public float aggroMeter;
-    public float aggroMaximum;
 
-    enum enemyState
+    public enum enemyState
     {
         Patrol,
         Suspicious,
@@ -16,7 +14,7 @@ public class EnemyAI : MonoBehaviour
     }
     
 
-    private enemyState state;
+    public enemyState state;
     void Start()
     {
     }
@@ -24,8 +22,6 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        state = enemyState.Patrol;
-
 
         switch (state)
         {
@@ -40,18 +36,8 @@ public class EnemyAI : MonoBehaviour
                 break;
 
 
-                state = enemyState.Aggro;
         }
      
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(gameObject.CompareTag("Player"))
-        {
-            aggroMeter *= Time.deltaTime;
-
-        }
     }
 
     private void SpotPlayer()
