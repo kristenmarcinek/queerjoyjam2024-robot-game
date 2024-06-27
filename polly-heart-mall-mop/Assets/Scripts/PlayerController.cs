@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -84,16 +83,5 @@ public class PlayerController : MonoBehaviour
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }
     }
-    private void OnParticleTrigger()
-    {
-       
-    if (gameObject.CompareTag("Player"))
-        {
-            Debug.Log("collect");
-            
-        }
-     
 
-
-    }
 }
