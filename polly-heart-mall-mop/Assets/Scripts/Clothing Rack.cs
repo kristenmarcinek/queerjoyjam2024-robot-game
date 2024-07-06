@@ -7,6 +7,7 @@ public class ClothingRack : MonoBehaviour
     public ParticleSystem clothes;
     public bool inCollider;
     private bool hasClothes = true;
+    public EnemyAI enemy;
     void Start()
     {
 
@@ -22,6 +23,8 @@ public class ClothingRack : MonoBehaviour
                 Debug.Log("Collide1");
                 clothes.Play();
                 hasClothes = false;
+                GetComponentInChildren<Collider>().enabled = true;
+
             }
         }
         
