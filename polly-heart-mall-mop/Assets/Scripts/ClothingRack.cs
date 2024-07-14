@@ -43,16 +43,4 @@ public class ClothingRack : MonoBehaviour
     {
         inCollider = false;
     }
-
-    /*private void OnParticleCollision(GameObject other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("collide with player");
-            Destroy(this.gameObject); //destroys clothing particle when collided with
-        }
-
-
-    }
-    */
 }
