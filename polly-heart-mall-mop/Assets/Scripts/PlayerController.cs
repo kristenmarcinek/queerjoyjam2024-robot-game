@@ -7,10 +7,10 @@ public class PlayerController : MonoBehaviour
     // using SerializeField for best practice, so that the variables are private but can be accessed in the inspector
     [field: Header("Component Variables")] // accessing player character components
     [SerializeField] private Rigidbody2D rb; // accessing Rigidbody2D component
-    [SerializeField] private CapsuleCollider2D playerCollider; // CapusleCollider2D for the player
+    [SerializeField] private CapsuleCollider2D playerCollider; // CapsuleCollider2D for the player
     [SerializeField] private Transform groundCheck; // checks if the players is touching the ground layer (can apply to tileset)
     [SerializeField] private LayerMask groundLayer; // layermask for the ground layer
-    
+
 
     [field: Header("Movement Variables")] // movement variables
     [SerializeField] private float speed = 8f; // speed of the player
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         Jump(); // jumping function
         Crouch(); // crouching function
     }
-    
+
     // FixedUpdate is called once per fixed frame; has the same framerate as the physics system, so it is framerate independent
     void FixedUpdate()
     {
@@ -83,17 +83,5 @@ public class PlayerController : MonoBehaviour
             playerCollider.size = new Vector2(playerCollider.size.x, 1f); // changing the size of the collider
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }
-    }
-    private void OnParticleTrigger()
-    {
-       
-    if (gameObject.CompareTag("Player"))
-        {
-            Debug.Log("collect");
-            
-        }
-     
-
-
     }
 }
