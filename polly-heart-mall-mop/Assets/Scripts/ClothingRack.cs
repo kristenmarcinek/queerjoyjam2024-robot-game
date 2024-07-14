@@ -9,6 +9,7 @@ public class ClothingRack : MonoBehaviour
     private ParticleSystem clothes; // particle system for the clothing, does not need to be defined in the inspector
     public bool inCollider;
     private bool hasClothes = false; // i just cswitched this to false and true down below because it made more sense to me but it did not really matter lol
+    public Sprite emptyClothingRack;
     
     void Start()
     {
@@ -25,6 +26,9 @@ public class ClothingRack : MonoBehaviour
                 Debug.Log("Collide1");
                 hasClothes = true;
                 LookedThroughClothingRack?.Invoke(clothes); // invokes the observer pattern within inventorysystem script
+                this.GetComponent<SpriteRenderer>().sprite = emptyClothingRack;
+
+
             }
         }
         

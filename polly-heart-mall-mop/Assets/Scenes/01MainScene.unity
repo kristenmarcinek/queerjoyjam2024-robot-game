@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inCollider: 0
+  emptyClothingRack: {fileID: 0}
 --- !u!1001 &419996583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -818,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inCollider: 0
+  emptyClothingRack: {fileID: 0}
 --- !u!1 &1564937945
 GameObject:
   m_ObjectHideFlags: 0
