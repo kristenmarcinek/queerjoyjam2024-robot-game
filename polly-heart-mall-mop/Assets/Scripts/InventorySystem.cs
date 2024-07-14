@@ -11,15 +11,15 @@ public class InventorySystem : GameManager // inventory system script is attache
 
     public void OnEnable()
     {
-        ClothingRack[] racks = FindObjectsOfType<ClothingRack>();
-        foreach (ClothingRack rack in racks)
+        ClothingRack[] racks = FindObjectsOfType<ClothingRack>(); // getting all the racks
+        foreach (ClothingRack rack in racks) // increments through the racks to observe for their events
         {
-            rack.LookedThroughClothingRack += OnLookedThrough;
-            clothingRacks.Add(rack);
+            rack.LookedThroughClothingRack += OnLookedThrough; // observer pattern 
+            clothingRacks.Add(rack); // adds the racks to the list of racks
         }
     }
 
-    private void OnDisable()
+    private void OnDisable() // removes the observer pattern if clothing racks are not detected
     {
         foreach (ClothingRack rack in clothingRacks)
         {
@@ -30,12 +30,12 @@ public class InventorySystem : GameManager // inventory system script is attache
         }
     }
 
-    public void OnLookedThrough(ParticleSystem clothes)
+    public void OnLookedThrough(ParticleSystem clothes) // passes the particle system through the observer pattern
     {
-        if (clothes != null)
+        if (clothes != null) // if the particle system is detected
         {
-            clothes.Play();
-            hasClothes = true;
+            clothes.Play(); // plays the particle system
+            hasClothes = true; 
             Debug.Log("Observer responds");
         }
         else
@@ -56,9 +56,9 @@ public class InventorySystem : GameManager // inventory system script is attache
 
     }
 
-    public virtual void AddingClothes()
+    public virtual void AddingClothes() // virtual function to add clothes to the inventory
     {
-        clothesCollected++;
+        clothesCollected++; // increases the clothes int (is referenced in the clothescollect script)
         Debug.Log("Number of clothes collected: " + clothesCollected);
     }
 }
