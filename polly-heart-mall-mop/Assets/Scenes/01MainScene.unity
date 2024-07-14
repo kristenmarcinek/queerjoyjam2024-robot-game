@@ -123,6 +123,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &176586619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 166059715296023409, guid: 3a696a761081371409fad93aee5260bb, type: 3}
+  m_PrefabInstance: {fileID: 858659562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &176586621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176586619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530bab50b167f7245a4b641a0876c5cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inCollider: 0
 --- !u!1001 &419996583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,6 +153,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Clothes
       objectReference: {fileID: 0}
+    - target: {fileID: 1004044711400334890, guid: 3a696a761081371409fad93aee5260bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e211722c0cbf566419d07fb293774d47, type: 3}
     - target: {fileID: 2662406912170174543, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: TriggerModule.exit
       value: 1
@@ -168,12 +190,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735065573}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.5178556
       objectReference: {fileID: 0}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9051723
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -395,24 +421,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &531367880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 166059715296023409, guid: 3a696a761081371409fad93aee5260bb, type: 3}
-  m_PrefabInstance: {fileID: 713591521}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &531367882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 531367880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530bab50b167f7245a4b641a0876c5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inCollider: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +503,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &713591521
+--- !u!1001 &858659562
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -507,6 +515,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Clothes
       objectReference: {fileID: 0}
+    - target: {fileID: 1004044711400334890, guid: 3a696a761081371409fad93aee5260bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e211722c0cbf566419d07fb293774d47, type: 3}
     - target: {fileID: 2662406912170174543, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: TriggerModule.exit
       value: 1
@@ -540,12 +552,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735065573}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.97
+      value: 21.5
       objectReference: {fileID: 0}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9051723
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8274544395779523399, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -593,7 +609,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 166059715296023409, guid: 3a696a761081371409fad93aee5260bb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 531367882}
+      addedObject: {fileID: 176586621}
   m_SourcePrefab: {fileID: 100100000, guid: 3a696a761081371409fad93aee5260bb, type: 3}
 --- !u!1 &1020763801
 GameObject:
@@ -1094,4 +1110,4 @@ SceneRoots:
   - {fileID: 2153550187951815018}
   - {fileID: 1592953659}
   - {fileID: 419996583}
-  - {fileID: 713591521}
+  - {fileID: 858659562}
