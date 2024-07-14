@@ -5,9 +5,8 @@ using UnityEngine.EventSystems;
 
 public class BodyPartSlot : MonoBehaviour, IDropHandler
 {
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
-        
         if (eventData.pointerDrag != null)
         { 
             Debug.Log("OnDrop");

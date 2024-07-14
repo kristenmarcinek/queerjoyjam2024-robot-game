@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClothesCollect : ClothingRack
 {
     List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>(); // get all the particles from the particle system attached to each clothing rack
+    public UnityAction ClothesCollection; // event for the clothes collected
+    public PlayerInventory playerInventory; // reference to the playerinventory script
 
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class ClothesCollect : ClothingRack
             manager.AddingClothes(); // overrides the clothesCollected int in the inventory system
         }
 
+        ClothesCollection?.Invoke();
         particleSystem.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter); // sets the particles that have entered the trigger
     }
 }
