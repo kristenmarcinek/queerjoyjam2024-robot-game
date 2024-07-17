@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
     private float horizontal; // horizontal input
 
     [field: Header("Animation Stuff")] // random animation variables (commented out, currently)
-    //public SpriteRenderer sR; // for dealing with sprites later
-    // public Animator animator; // for dealing with animations later
-    // private bool isFacingRight = true; // checks if the player is facing right
+    public SpriteRenderer sR; // for dealing with sprites later
+    public Animator animator; // for dealing with animations later
+    private bool isFacingRight = true; // checks if the player is facing right
     // Still have to add a lot of code for animations but will do so later as to not clog up the script
 
 
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         GetInput(); // getting input
         Jump(); // jumping function
         Crouch(); // crouching function
+        UpdateAnimator();
     }
 
     // FixedUpdate is called once per fixed frame; has the same framerate as the physics system, so it is framerate independent
@@ -52,6 +53,14 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y); // moving the player
+        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 
     private bool isGrounded() // groundcheck bool
@@ -65,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded() && Input.GetButton("Jump")) // if the player is grounded and the jump button is pressed, the player can jump
         {
             Debug.Log("Jumping");
+            animator.SetBool("isJumping", true); // setting the isJumping bool to true
             rb.velocity = new Vector2(rb.velocity.x, jumpForce); // jump force applied to rigidbody
         }
     }
@@ -74,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl)) // if the left control key is pressed, the player can crouch
         {
             Debug.Log("Crouching");
+            animator.SetBool("isCrouching", true); // setting the isCrouching bool to true
             playerCollider.size = new Vector2(playerCollider.size.x, 0.5f); // changing the size of the collider
             playerCollider.offset = new Vector2(playerCollider.offset.x, -0.25f); // changing the offset of the collider
         }
@@ -83,5 +94,20 @@ public class PlayerController : MonoBehaviour
             playerCollider.size = new Vector2(playerCollider.size.x, 1f); // changing the size of the collider
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }
+    }
+
+    private void FlipCharacter()
+    {
+        if ((isFacingRight && horizontal < 0f) || (!isFacingRight && horizontal > 0f))
+        {
+            isFacingRight = !isFacingRight;
+            sR.flipX = !sR.flipX;
+        }
+    }
+
+    private void UpdateAnimator()
+    {
+        animator.SetBool("isRunning", Mathf.Abs(horizontal) > 0 && isGrounded());
+        FlipCharacter();
     }
 }
