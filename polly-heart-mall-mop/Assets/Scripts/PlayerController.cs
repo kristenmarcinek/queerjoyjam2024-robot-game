@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded() // groundcheck bool
     {
         // Debug.Log("Grounded");
+        animator.SetBool("isJumping", false);
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer); // ground check using child object
     }
 
@@ -91,6 +92,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.LeftControl)) // if the left control key is released, the player can stand up
         {
             Debug.Log("Not crouching");
+            animator.SetBool("isCrouching", false);
             playerCollider.size = new Vector2(playerCollider.size.x, 1f); // changing the size of the collider
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }

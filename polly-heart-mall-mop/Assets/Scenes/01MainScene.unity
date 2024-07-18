@@ -1079,6 +1079,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 981727775388874418, guid: 33317ee436eda1b448996a9ed569baa5, type: 3}
   m_PrefabInstance: {fileID: 2995857264525264683}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1007424815 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2660919970531072788, guid: 33317ee436eda1b448996a9ed569baa5, type: 3}
+  m_PrefabInstance: {fileID: 2995857264525264683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1007424816 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 654942867262860320, guid: 33317ee436eda1b448996a9ed569baa5, type: 3}
+  m_PrefabInstance: {fileID: 2995857264525264683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1020763801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1871,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5516487576361329764, guid: 33317ee436eda1b448996a9ed569baa5, type: 3}
+      propertyPath: sR
+      value: 
+      objectReference: {fileID: 1007424816}
+    - target: {fileID: 5516487576361329764, guid: 33317ee436eda1b448996a9ed569baa5, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1007424815}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
