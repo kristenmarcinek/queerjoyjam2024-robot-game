@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [field: Header("Component Variables")] // accessing player character components
     [SerializeField] private Rigidbody2D rb; // accessing Rigidbody2D component
     [SerializeField] private CapsuleCollider2D playerCollider; // CapsuleCollider2D for the player
+    [SerializeField] private CapsuleCollider2D crouchCollider; // CapsuleCollider2D for the player
     [SerializeField] private Transform groundCheck; // checks if the players is touching the ground layer (can apply to tileset)
     [SerializeField] private LayerMask groundLayer; // layermask for the ground layer
 
@@ -76,7 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Jumping");
             animator.SetBool("isJumping", true); // setting the isJumping bool to true
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce); // jump force applied to rigidbody
+            StartCoroutine(jumpAni());
+            
         }
     }
 
@@ -86,15 +88,19 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Crouching");
             animator.SetBool("isCrouching", true); // setting the isCrouching bool to true
-            playerCollider.size = new Vector2(playerCollider.size.x, 0.5f); // changing the size of the collider
-            playerCollider.offset = new Vector2(playerCollider.offset.x, -0.25f); // changing the offset of the collider
+            playerCollider.enabled = false;
+            crouchCollider.enabled = true;
+            //playerCollider.size = new Vector2(playerCollider.size.x, 0.5f); // changing the size of the collider
+            //playerCollider.offset = new Vector2(playerCollider.offset.x, -0.25f); // changing the offset of the collider
         }
         else if (Input.GetKeyUp(KeyCode.LeftControl)) // if the left control key is released, the player can stand up
         {
             Debug.Log("Not crouching");
             animator.SetBool("isCrouching", false);
-            playerCollider.size = new Vector2(playerCollider.size.x, 1f); // changing the size of the collider
-            playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
+            playerCollider.enabled = true;
+            crouchCollider.enabled = false;
+            //playerCollider.size = new Vector2(playerCollider.size.x, 1f); // changing the size of the collider
+            //playerCollider.offset = new Vector2(playerCollider.offset.x, 0f); // changing the offset of the collider
         }
     }
 
@@ -111,5 +117,11 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("isRunning", Mathf.Abs(horizontal) > 0 && isGrounded());
         FlipCharacter();
+    }
+
+    IEnumerator jumpAni()
+    {
+        yield return new WaitForSeconds(.2f);
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce); // jump force applied to rigidbody
     }
 }
